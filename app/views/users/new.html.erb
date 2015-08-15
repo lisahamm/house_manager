@@ -1,0 +1,14 @@
+<h1>Sign up</h1>
+
+<%= form_for(@user) do |f| %>
+
+  <% @user.errors.full_messages.each do |message| %>
+    <p class="error" style="color: red;"><%= message %></p>
+  <% end %>
+
+  <%= f.text_field :email, placeholder: "me@example.com" %>
+  <%= f.password_field :password, placeholder: "password" %>
+  <%= f.password_field :password_confirmation, placeholder: "retype password" %>
+
+  <%= f.submit "Submit" %>
+<% end %>
